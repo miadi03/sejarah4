@@ -244,6 +244,7 @@ section .title::after{
     border-radius: 6px;
     border: 2px solid crimson;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .home .home-content a:hover{
     color: crimson;
