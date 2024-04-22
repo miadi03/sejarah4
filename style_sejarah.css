@@ -1,0 +1,952 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/*styling scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/*styling semua kontent yang sama */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+
+
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 15px 0%;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+    background-color: crimson;
+
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: brown;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* ------------------------------------------------------------ */
+.navbar .logo a .logoku{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+  outline: 2px solid white;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.navbar .logo a .logoku:hover{
+  transform: scale(1.2);
+  outline: 2px solid goldenrod;
+}
+
+/* ----------------------------------------------------------- */
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.navbar .logo a span{
+    color: goldenrod;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color .5s ease-in;
+    padding: 5px
+}
+.navbar .menu li a:hover{
+    color: crimson;
+    background-color: white;
+    padding: 5px;
+    transition: .5s ease-in;
+    border-radius: 5px;
+}
+.navbar.sticky .menu li a:hover{
+    color: brown;
+    background-color: white;
+}
+
+
+.navbar .menu .active {
+
+  color: crimson;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.navbar .menu .active:hover{
+  background: none !important;
+  outline: 2px solid white;
+  color: white !important;
+}
+
+
+
+ 
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+
+/* home section styling */
+.home{
+    display: flex;
+    background: url("img/bg.jpg") no-repeat center;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: crimson;
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+    color: crimson;
+    background: none;
+}
+
+/*nyobe gambar*/
+.home .saya img{
+    margin-right: 20px;
+    height: 40rem;
+    width: 30rem;
+}
+
+/* ================================================================== */
+/* about section styling */
+.about .title{
+  padding-bottom: 1rem;
+}
+
+.about .title::after{
+    content: "";
+}
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+    color: crimson;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color: crimson;
+    background: none;
+}
+
+
+
+/* ==================================================== */
+
+
+
+/* kelas */
+
+/* services section styling */
+
+section .title-p{
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 20px 0 60px;
+  color: crimson;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.services, .teams{
+    color:#fff;
+    background: #111;
+}
+
+
+.services .serv-content .card{
+    width: calc(33% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover{
+    background: crimson;
+}
+.services .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+.services .serv-content .card i{
+    font-size: 50px;
+    color: crimson;
+    transition: color 0.3s ease;
+}
+.services .serv-content .card:hover i{
+    color: #fff;
+}
+.services .serv-content .card .text{
+    font-size: 60px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/* ============================================================ */
+
+
+/* footer section */
+.footer {
+    background-color:grey;
+    padding: 4rem 1rem;
+    line-height: 3rem;
+  }
+  
+  .footer-top__box span svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill:#e71247;
+  }
+  
+  .footer-top__box span {
+    margin-right: 0.5rem;
+  }
+  
+  .footer__top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color:#f9f9f9f9;
+  }
+  .footer-top__box a:link,
+    .footer-top__box a:visited {
+  display: block;
+  color: white;
+  font-size: 15px;
+  transition: 0.6s;
+  padding-left: 15%;
+}
+
+.footer-top__box a:hover {
+  color: crimson;
+}
+
+.footer-top__box div {
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.footer-top__box div:hover {
+  color: crimson;
+  transition: .5s ease-in-out;
+}
+
+.footer-top__box div i{
+    color: goldenrod;
+}
+
+.footer-top__box h3 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-left: 15%;
+}
+.footer-top__box a.sosmed{
+    color: crimson;
+}
+.footer-top__box a.sosmed:hover{
+    color: gold;
+}
+
+
+
+/* ============================================= */
+
+
+
+
+
+/* card materi*/
+
+  .container2 {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 1rem;
+  }
+
+  .kartu .judul{
+    margin: auto;
+    padding: 0 0 1rem;
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+  }
+  
+  .kartu .judul span{
+    color: crimson;
+  }
+  
+   .kartu .judul-p{
+    padding-bottom: 2.5rem;
+    font-size: 1.5rem;
+    color: black;
+    margin: auto;
+    text-align: center;
+  }
+
+  
+  .card__container2 {
+    display: grid;
+    row-gap: 3.5rem;
+  }
+  
+  .card__article {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card__img {
+    width: 328px;
+    height: 328px;
+    border-radius: 1.5rem;
+  }
+  
+  .card__data {
+    width: 280px;
+    background-color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+  }
+  
+  .card__description {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .card__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: maroon;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .card__button {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: crimson;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .card__button:hover {
+    background: none;
+    color: #e71247;
+    outline: 2px solid crimson;
+  }
+  
+/* --------------------------------------------------- */
+
+
+  /*  animasi hover */
+  .card__article:hover .card__data {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+  
+  .card__article:hover {
+    animation: remove-overflow 2s forwards;
+  }
+  
+  .card__article:not(:hover) {
+    animation: show-overflow 2s forwards;
+  }
+  
+  .card__article:not(:hover) .card__data {
+    animation: remove-data 1s forwards;
+  }
+  
+  /* Card animation */
+  @keyframes show-data {
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(-7rem);
+    }
+  }
+  
+  @keyframes remove-overflow {
+    to {
+      overflow: initial;
+    }
+  }
+  
+  @keyframes remove-data {
+    0% {
+      transform: translateY(-7rem);
+    }
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(.5rem);
+    }
+  }
+  
+  @keyframes show-overflow {
+    0% {
+      overflow: initial;
+      pointer-events: none;
+    }
+    50% {
+      overflow: hidden;
+    }
+  }
+
+
+
+
+
+  
+  /*=============== BREAKPOINTS ===============*/
+  /* For small devices */
+  @media screen and (max-width: 340px) {
+    .container2 {
+      margin-inline: 1rem;
+    }
+  
+    .card__data {
+      width: 250px;
+      padding: 1rem;
+    }
+  }
+  
+  /* For medium devices */
+  @media screen and (min-width: 768px) {
+    .card__container2 {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
+    }
+  }
+  
+  /* For large devices */
+  @media screen and (min-width: 1120px) {
+    .container2 {
+      height: 100vh;
+    }
+  
+    .card__container2 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card__img {
+      width: 348px;
+    }
+    .card__data {
+      width: 316px;
+      padding-inline: 2.5rem;
+    }
+  }
+
+
+
+
+
+/*end card materi*/
+
+
+/* ======================================================= */
+
+
+
+
+
+/* video */
+
+.video{
+    background-color: #222;
+    height: auto;
+}
+
+.video .judul{
+  margin: auto;
+  padding: 0 0 1rem;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.video .judul span{
+  color: crimson;
+}
+
+ .judul-p{
+  padding-bottom: 2.5rem;
+  font-size: 1.5rem;
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+
+
+
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 10%;
+  }
+
+
+  .grid-container .judul{
+    margin: auto;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    color: white;
+  }
+
+  .grid-container .judul span{
+    color: crimson;
+  }
+
+  .grid-container .judul-p{
+    padding-bottom: 2.5rem;
+    font-size: 1.5rem;
+    color: white;
+    margin: auto;
+  }
+
+
+  .grid-item {
+    flex: 1 0 calc(25% - 20px);
+  }
+
+  .card {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card iframe {
+    width: 100%;
+    height: 15rem;
+  }
+
+  .card:hover{
+    box-shadow: 5px 5px 30px rgba(238, 6, 6, 0.927);
+  }
+  
+
+
+  
+  @media screen and (max-width: 1023px) {
+    .grid-item {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .grid-item {
+      flex-basis: calc(100% - 20px);
+    }
+  }
+  
+  /*end video */
+
+/* ============================================================ */
+
+
+
+
+
+
+
+
+
+/* ============================================================ */
+
+
+/* responsive media query start */
+
+
+
+@media (max-width: 1104px) {
+  .saya{
+    display: none;
+}
+
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+     
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .kartu .judul{
+      padding: 2rem 0 1rem;
+      font-size: 2rem;
+    }
+    
+    
+     .kartu .judul-p{
+      font-size: 1.3rem;
+    }
+
+    .video .judul{
+      padding: 2rem 0 1rem;
+      font-size: 2rem;
+    }
+    
+    
+     .video .judul-p{
+      font-size: 1.2rem;
+    }
+
+    .about .about-content .right p{
+      font-size: 15px;
+  }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .saya{
+        display: none;
+    }
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+
+    /* footer responsive */
+      
+    .footer__top {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        color:#f9f9f9f9;
+      }
+
+      .footer-top__box span {
+        margin-right: none;
+      }
+
+      .footer-top__box.nmb{
+        display: none;
+      }
+    
+    .footer-top__box div {
+      color: crimson;
+      font-size: 15px;
+      
+    }
+    
+    .footer-top__box div i{
+        color: goldenrod;
+        font-size: small;
+    }
+    
+    .footer-top__box h3 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+
+}
